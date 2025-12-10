@@ -1,0 +1,49 @@
+import React from 'react'
+import {words} from '../constants/index.js';
+import Buttons from "../components/Buttons.jsx";
+
+const Hero = () => {
+    return (
+        <section id="hero" className="overflow-hidden relative">
+            <div className="absolute top-0 left-0 z-10">
+                <img src="/images/bg.png" alt="background" />
+            </div>
+
+            <div className="hero-layout">
+                <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+                    <div className="flex flex-col gap-7">
+                        <div className="hero-text">
+                            <h1>Shaping
+                                <span className="slide">
+                                    <span className="wrapper">
+                                        {words.map((word,index) => (
+                                            <span key={index} className="flex items-center md:gap-3 gap-1 pb-2">
+                                                <img src={word.imgPath} alt="person" className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50" />
+                                                <span>{word.text}</span>
+                                            </span>
+
+                                        ))}
+                                    </span>
+                                </span>
+                            </h1>
+
+                            <h1>into Real Projects</h1>
+                            <h1>that deliver results</h1>
+
+                            <p className="z-10 pointer-events-none md:text-xl text-white-50">
+                                Hi!. I'm Aashrith, a developer based in Bengaluru with a passion <br /> for  developing cool and interesting websites
+                            </p>
+
+                            <Buttons
+                              className="md:w-80 md:h-16 w-60 h-12"
+                              id="button"
+                              text="See my work"
+                            />
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </section>
+    )
+}
+export default Hero
